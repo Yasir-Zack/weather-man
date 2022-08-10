@@ -19,7 +19,7 @@ max_temp_date=""
 
 
 # For One File
-# file_path = "/home/abdullah126/Desktop/project2/Weather man-20220810T060630Z-001/Weather man/Dubai_weather/" 
+# file_path = "//" 
 # file_name = "#{cities[0]}weather#{year}_#{month[0]}.txt"
 #             if filenames_Dubai.include?(file_name) 
 #                 file_path = file_path << file_name
@@ -55,9 +55,9 @@ max_temp_date=""
 file_path = "" 
 file_name=""
 
-countLahore=0
+# countLahore=0
 countDubai=0
-countMurree=0
+# countMurree=0
 cities.each do |city|
     month.each do |mon|
         
@@ -74,7 +74,7 @@ cities.each do |city|
                 puts file.read
 
 
-                csv = CSV.read(file_path, :headers=>true)
+                csv = CSV.read(file_path, :headers=>true, :skip_blanks=>true)
                 size = csv['Max TemperatureC'].size
                 
                 for i in 0...size
